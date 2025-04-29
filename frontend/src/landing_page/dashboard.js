@@ -15,7 +15,7 @@ function Dashboard() {
       </p>
       <a
         className="dash fs-3"
-        href={process.env.SERVER2}
+        href="https://trade-x-unkz.vercel.app"
         target="_blank"
         rel="noopener noreferrer"
         style={{ display: "block", textDecoration: "none", marginTop: "8rem" }}

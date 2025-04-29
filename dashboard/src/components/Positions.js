@@ -6,7 +6,7 @@ const Positions = () => {
   const navigate = useNavigate();
   useEffect(() => {
     axios
-      .get(`${process.env.BACKEND}/allPositions`, {
+      .get("https://tradex-o1ht.onrender.com/allPositions", {
         withCredentials: true,
       })
       .then((res) => {
@@ -16,7 +16,7 @@ const Positions = () => {
       .catch((err) => {
         if (err.response && err.response.status === 401) {
           navigate("/login");
-          window.location.href = `${process.env.FRONTEND}/login`;
+          window.location.href = "https://trade-x-weld.vercel.app/login";
         }
       });
   }, [navigate]);

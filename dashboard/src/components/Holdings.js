@@ -9,7 +9,7 @@ const Holdings = () => {
 
   useEffect(() => {
     axios
-      .get(`${process.env.BACKEND}/allHoldings`, {
+      .get("https://tradex-o1ht.onrender.com/allHoldings", {
         withCredentials: true,
       })
       .then((res) => {
@@ -18,7 +18,7 @@ const Holdings = () => {
       .catch((err) => {
         if (err.response && err.response.status === 401) {
           navigate("/login");
-          window.location.href = `${process.env.FRONTEND}/login`;
+          window.location.href = "https://trade-x-weld.vercel.app/login";
         }
       });
   }, [navigate]);

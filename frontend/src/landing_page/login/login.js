@@ -20,7 +20,7 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(`${process.env.BACKENDSERVER}/login`, {
+      const response = await fetch("https://tradex-o1ht.onrender.com/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

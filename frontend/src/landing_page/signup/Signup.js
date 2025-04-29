@@ -22,7 +22,7 @@ function Signup() {
     e.preventDefault();
 
     try {
-      const response = await fetch(`${process.env.BACKENDSERVER}/signup`, {
+      const response = await fetch("https://tradex-o1ht.onrender.com/signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
