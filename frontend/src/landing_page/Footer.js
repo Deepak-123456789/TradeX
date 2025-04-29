@@ -6,7 +6,10 @@ function Footer() {
       <div className="container border-top mt-5">
         <div className="row mt-5">
           <div className="col">
-            <img src="media/images/TradeXlogo.png" style={{ width: "50%" }} />
+            <img
+              src={`${process.env.PUBLIC_URL}/media/images/TradeXlogo.png`}
+              style={{ width: "50%" }}
+            />
             <p>
               &copy; 2010 - 2025, Not TradeX Broking Ltd. &nbsp; All rights
               reserved.

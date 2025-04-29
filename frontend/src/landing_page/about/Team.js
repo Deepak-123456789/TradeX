@@ -1,5 +1,5 @@
 import React from "react";
-import image1 from "../../media/Images/nithinKamath.jpg";
+
 function Team() {
   return (
     <div className="container">
@@ -13,7 +13,8 @@ function Team() {
       >
         <div className="col-6 p-3 text-center">
           <img
-            src={image1}
+            className="img-fluid"
+            src={`${process.env.PUBLIC_URL}/media/Images/deepak.jpg`}
             alt="Deepak Mer"
             style={{ borderRadius: "100%", width: "50%" }}
           />
