@@ -9,6 +9,7 @@ function Footer() {
             <img
               src={`${process.env.PUBLIC_URL}/media/images/TradeXlogo.png`}
               style={{ width: "50%" }}
+              alt="Logo"
             />
             <p>
               &copy; 2010 - 2025, Not TradeX Broking Ltd. &nbsp; All rights
