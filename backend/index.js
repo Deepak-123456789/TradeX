@@ -25,6 +25,7 @@ app.use(cookieParser());
 app.use(
   cors({
     origin: function (origin, callback) {
+      console.log("Request origin:", origin);
       if (!origin || allowedOrigins.includes(origin)) {
         callback(null, true);
       } else {
@@ -61,6 +62,10 @@ app.post("/newOrder", async (req, res) => {
 app.post("/signup", Signup);
 app.post("/login", Login);
 app.post("/logout", Logout);
+
+app.get("/", (req, res) => {
+  res.send("Backend is running!");
+});
 
 app.listen(PORT, () => {
   console.log("App started!");
