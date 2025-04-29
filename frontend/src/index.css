@@ -1,0 +1,78 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+/* Navbar */
+.nav-link {
+  margin-left: 20px;
+}
+.nav-link:hover {
+  color: #1a73e8 !important;
+}
+/* Footer */
+.detail a {
+  text-decoration: none;
+  margin-bottom: 15px;
+  color: #4b4b4b;
+  font-weight: 500;
+  display: inline-block;
+}
+.detail a:hover {
+  color: #1a73e8;
+}
+/* openAccount and  */
+.btnx:hover {
+  background-color: black;
+}
+
+/* Support */
+#supportHero {
+  background-color: rgb(56, 126, 209);
+  color: white;
+}
+
+#supportHero a {
+  color: white;
+}
+
+#supportWrapper {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 90px;
+}
+
+#supportHero input {
+  padding: 18px 20px;
+  width: 100%;
+  font-size: 20px;
+  border-radius: 7px;
+}
+
+.container-fluid a {
+  text-decoration: none;
+  font-size: 18px;
+}
+.support a:hover {
+  color: #4b4b4b;
+}
+.hero_support {
+  align-items: center;
+  padding-left: 8rem;
+}
+#Support_Portal {
+  padding-right: 10rem;
+}
+
+.dash:hover {
+  color: #4b4b4b;
+}
