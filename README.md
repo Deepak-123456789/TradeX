@@ -10,7 +10,6 @@
 - 💼 Virtual portfolio management  
 - 📝 User registration and login  
 - 📈 Basic trading operations: Buy/Sell  
-- 📂 Trade history log  
 - 🔐 Secure authentication using JWT  
 - 📋 Responsive and user-friendly UI  
 
