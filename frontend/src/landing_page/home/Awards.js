@@ -44,7 +44,7 @@ function Awards() {
             </div>
           </div>
           <img
-            src={`${process.env.PUBLIC_URL}/media/images/pressLogos.png`}
+            src={`${process.env.PUBLIC_URL}/media/Images/pressLogos.png`}
             style={{ width: "90%" }}
           />
         </div>

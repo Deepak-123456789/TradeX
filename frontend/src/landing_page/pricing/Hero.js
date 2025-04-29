@@ -12,7 +12,7 @@ function Hero() {
       <div className="row p-5 mt-5 text-center">
         <div className="col-4 p-4">
           <img
-            src={`${process.env.PUBLIC_URL}/media/images/pricingEquity.svg`}
+            src={`${process.env.PUBLIC_URL}/media/Images/pricingEquity.svg`}
             alt="pricingEquity"
           />
           <h1 className="fs-3">Free equity delivery</h1>
@@ -23,7 +23,7 @@ function Hero() {
         </div>
         <div className="col-4 p-4">
           <img
-            src={`${process.env.PUBLIC_URL}/media/images/intradayTrades.svg`}
+            src={`${process.env.PUBLIC_URL}/media/Images/intradayTrades.svg`}
             alt="intradayTrades"
           />
           <h1 className="fs-3">Intraday and F&O trades</h1>
@@ -34,7 +34,7 @@ function Hero() {
         </div>
         <div className="col-4 p-4">
           <img
-            src={`${process.env.PUBLIC_URL}/media/images/pricingEquity.svg`}
+            src={`${process.env.PUBLIC_URL}/media/Images/pricingEquity.svg`}
             alt="pricingEquity"
           />
           <h1 className="fs-3">Free direct MF</h1>

@@ -30,7 +30,7 @@ function Stats() {
         </div>
         <div className="col-6 p-5">
           <img
-            src={`${process.env.PUBLIC_URL}/media/images/ecosystem.png`}
+            src={`${process.env.PUBLIC_URL}/media/Images/ecosystem.png`}
             style={{ width: "90%" }}
           />
           <div className="text-center">

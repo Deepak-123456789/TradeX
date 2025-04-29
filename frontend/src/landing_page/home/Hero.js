@@ -5,7 +5,7 @@ function Hero() {
     <div className="container p-5 mb-5">
       <div className="row text-center">
         <img
-          src={`${process.env.PUBLIC_URL}/media/images/homeHero.png`}
+          src={`${process.env.PUBLIC_URL}/media/Images/homeHero.png`}
           alt="Hero Image"
           className="mb-5"
         />
