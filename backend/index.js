@@ -17,10 +17,7 @@ const uri = process.env.MONGO_URL;
 
 const app = express();
 
-const allowedOrigins = [
-  "https://trade-x-weld.vercel.app",
-  "https://trade-x-unkz.vercel.app",
-];
+const allowedOrigins = ["http://localhost:3000", "http://localhost:3001"];
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));

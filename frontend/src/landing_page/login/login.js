@@ -20,7 +20,7 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("https://tradex-o1ht.onrender.com/login", {
+      const response = await fetch("http://localhost:3002/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
