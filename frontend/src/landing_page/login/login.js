@@ -20,7 +20,7 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:3002/login", {
+      const response = await fetch(`${process.env.BACKENDSERVER}/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -31,13 +31,12 @@ function Login() {
       const data = await response.json();
 
       if (data.message !== "Incorrect password or email") {
-        // Check if the response status is OK (200)
-        setAlertMessage("Login successful!"); // Show success message
-        localStorage.setItem("isLoggedIn", "true"); // Store login state (could be in cookies too)
+        setAlertMessage("Login successful!");
+        localStorage.setItem("isLoggedIn", "true");
 
         setTimeout(() => {
-          setAlertMessage(""); // Clear message after some time
-          navigate("/"); // Redirect to home or protected route
+          setAlertMessage("");
+          navigate("/");
           window.location.reload();
         }, 1000);
       } else {

@@ -9,14 +9,16 @@ const Holdings = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3002/allHoldings", { withCredentials: true })
+      .get(`${process.env.BACKEND}/allHoldings`, {
+        withCredentials: true,
+      })
       .then((res) => {
         setAllHoldings(res.data);
       })
       .catch((err) => {
         if (err.response && err.response.status === 401) {
           navigate("/login");
-          window.location.href = "http://localhost:3000/login";
+          window.location.href = `${process.env.FRONTEND}/login`;
         }
       });
   }, [navigate]);

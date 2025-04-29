@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
 import axios, { all } from "axios";
 import { useNavigate } from "react-router-dom";
-// import { VerticalGraph } from "./VerticalGraph";
 const Positions = () => {
   const [allPositions, setAllPositions] = useState([]);
   const navigate = useNavigate();
   useEffect(() => {
     axios
-      .get("http://localhost:3002/allPositions", { withCredentials: true })
+      .get(`${process.env.BACKEND}/allPositions`, {
+        withCredentials: true,
+      })
       .then((res) => {
         // console.log(res.data);
         setAllPositions(res.data);
@@ -15,7 +16,7 @@ const Positions = () => {
       .catch((err) => {
         if (err.response && err.response.status === 401) {
           navigate("/login");
-          window.location.href = "http://localhost:3000/login";
+          window.location.href = `${process.env.FRONTEND}/login`;
         }
       });
   }, [navigate]);

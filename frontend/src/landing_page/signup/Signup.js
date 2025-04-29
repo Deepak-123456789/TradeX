@@ -7,8 +7,8 @@ function Signup() {
     username: "",
     password: "",
   });
-  const [alertMessage, setAlertMessage] = useState(""); // State for success message
-  const navigate = useNavigate(); // Initialize navigate function
+  const [alertMessage, setAlertMessage] = useState("");
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -22,7 +22,7 @@ function Signup() {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:3002/signup", {
+      const response = await fetch(`${process.env.BACKENDSERVER}/signup`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -31,15 +31,14 @@ function Signup() {
         body: JSON.stringify(formData),
       });
 
-      // Assuming backend sends a JSON response with a message
       const data = await response.json();
 
       if (data.message !== "User already exists") {
-        setAlertMessage("Signup successful!"); // Show success message
+        setAlertMessage("Signup successful!");
 
         setTimeout(() => {
           setAlertMessage("");
-          navigate("/"); // Redirect to home or protected route
+          navigate("/");
           window.location.reload();
         }, 500);
       } else {
