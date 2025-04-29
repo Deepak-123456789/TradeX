@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
+import image1 from "../media/Images/TradeXlogo.png";
+
 function Navbar() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const navigate = useNavigate();
@@ -33,11 +35,7 @@ function Navbar() {
     >
       <div className="container p-2">
         <Link className="navbar-brand" to="/">
-          <img
-            src="media/images/TradeXlogo.png"
-            style={{ width: "50%" }}
-            alt="Logo"
-          />
+          <img src={image1} style={{ width: "50%" }} alt="Logo" />
         </Link>
         <button
           className="navbar-toggler"
