@@ -16,7 +16,10 @@ function Universe() {
 
         <div className="row mt-5">
           <div className="col-md-4 p-3">
-            <img src="media/Images/smallcase.png" alt="Smallcase logo" />
+            <img
+              src={`${process.env.PUBLIC_URL}/media/Images/smallcase.png`}
+              alt="Smallcase logo"
+            />
             <p className="text-small text-muted mt-2">
               Thematic investing platform that helps you invest in diversified
               baskets of stocks on ETFs.
@@ -24,7 +27,7 @@ function Universe() {
           </div>
           <div className="col-md-4 p-3">
             <img
-              src={`${process.env.PUBLIC_URL}/media/Images/streak.png`}
+              src={`${process.env.PUBLIC_URL}/media/Images/Streak.png`}
               alt="Streak logo"
             />
             <p className="text-small text-muted mt-2">

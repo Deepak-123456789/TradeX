@@ -32,11 +32,14 @@ function LeftSection({
           </div>
           <div className="mt-3">
             <a href={googlePlay}>
-              <img src="media/images/googlePlayBadge.svg" alt="img" />
+              <img
+                src={`${process.env.PUBLIC_URL}/media/images/googlePlayBadge.svg`}
+                alt="img"
+              />
             </a>
             <a href={appStore}>
               <img
-                src="media/images/appstoreBadge.svg"
+                src={`${process.env.PUBLIC_URL}/media/images/appstoreBadge.svg`}
                 style={{ marginLeft: "50px" }}
                 alt="img"
               />
