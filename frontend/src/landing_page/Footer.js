@@ -7,7 +7,7 @@ function Footer() {
         <div className="row mt-5">
           <div className="col">
             <img
-              src={`${process.env.PUBLIC_URL}/media/images/TradeXlogo.png`}
+              src={`${process.env.PUBLIC_URL}/media/Images/TradeXlogo.png`}
               style={{ width: "50%" }}
               alt="Logo"
             />
