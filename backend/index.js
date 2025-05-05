@@ -17,7 +17,8 @@ const uri = process.env.MONGO_URL;
 
 const app = express();
 
-const allowedOrigins = ["http://localhost:3000", "http://localhost:3001"];
+// const allowedOrigins = ["http://localhost:3000", "http://localhost:3001"];
+const allowedOrigins = [process.env.SERVER1, process.env.SERVER2];
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
