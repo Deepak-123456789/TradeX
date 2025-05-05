@@ -15,7 +15,7 @@ function Dashboard() {
       </p>
       <a
         className="dash fs-3"
-        href="http://localhost:3001"
+        href={process.env.REACT_APP_SERVER1}
         target="_blank"
         rel="noopener noreferrer"
         style={{ display: "block", textDecoration: "none", marginTop: "8rem" }}

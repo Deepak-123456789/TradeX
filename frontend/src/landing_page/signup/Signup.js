@@ -22,7 +22,7 @@ function Signup() {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:3002/signup", {
+      const response = await fetch(`${process.env.REACT_APP_BACKEND}/signup`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

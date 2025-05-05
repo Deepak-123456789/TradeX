@@ -7,7 +7,7 @@ module.exports.authenticate = (req, res, next) => {
   try {
     const decoded = jwt.verify(token, process.env.TOKEN_KEY);
     req.user = decoded;
-    console.log("User authenticated:", decoded);
+
     next();
   } catch (err) {
     console.log("JWT verification failed:", err.message);
