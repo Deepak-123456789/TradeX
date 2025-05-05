@@ -6,7 +6,7 @@ const Positions = () => {
   const navigate = useNavigate();
   useEffect(() => {
     axios
-      .get("http://localhost:3002/allPositions", {
+      .get(`${process.env.REACT_APP_BACKEND}/allPositions`, {
         withCredentials: true,
       })
       .then((res) => {
@@ -16,7 +16,7 @@ const Positions = () => {
       .catch((err) => {
         if (err.response && err.response.status === 401) {
           navigate("/login");
-          window.location.href = "http://localhost:3000/login";
+          window.location.href = `${process.env.REACT_APP_SERVER1}/login`;
         }
       });
   }, [navigate]);

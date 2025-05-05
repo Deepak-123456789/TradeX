@@ -9,7 +9,7 @@ const Holdings = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3002/allHoldings", {
+      .get(`${process.env.REACT_APP_BACKEND}/allHoldings`, {
         withCredentials: true,
       })
       .then((res) => {
@@ -18,7 +18,7 @@ const Holdings = () => {
       .catch((err) => {
         if (err.response && err.response.status === 401) {
           navigate("/login");
-          window.location.href = "http://localhost:3000/login";
+          window.location.href = `${process.env.REACT_APP_SERVER1}/login`;
         }
       });
   }, [navigate]);
