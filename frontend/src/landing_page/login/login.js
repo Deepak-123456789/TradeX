@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import Cookies from "js-cookie";
 function Login() {
   const [formData, setFormData] = useState({
     email: "",
@@ -32,7 +32,11 @@ function Login() {
 
       if (data.message !== "Incorrect password or email") {
         setAlertMessage("Login successful!");
+        localStorage.setItem("token", data.token);
+
+        localStorage.setItem("user", JSON.stringify(data.user));
         localStorage.setItem("isLoggedIn", "true");
+        Cookies.set("user_email", data.user.email);
 
         setTimeout(() => {
           setAlertMessage("");
@@ -43,7 +47,7 @@ function Login() {
         setAlertMessage(data.message || "Incorrect password or email");
         setTimeout(() => {
           setAlertMessage("");
-        }, 1000);
+        }, 1500);
       }
     } catch (error) {
       console.error("Error submitting form:", error);

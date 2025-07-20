@@ -1,23 +1,40 @@
 import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-
 import GeneralContext from "./GeneralContext";
 import "./BuyActionWindow.css";
+import Cookies from "js-cookie";
 
 const BuyActionWindow = ({ uid }) => {
   const [stockQuantity, setStockQuantity] = useState(1);
   const [stockPrice, setStockPrice] = useState(0.0);
+  const email = Cookies.get("user_email");
 
   const { closeBuyWindow } = useContext(GeneralContext);
 
   const handleBuyClick = () => {
-    axios.post("http://localhost:3002/newOrder", {
-      name: uid,
-      qty: stockQuantity,
-      price: stockPrice,
-      mode: "BUY",
-    });
+    axios
+      .post(
+        "http://localhost:3002/newOrder",
+        {
+          name: uid,
+          qty: stockQuantity,
+          price: stockPrice,
+          mode: "BUY",
+        },
+        {
+          headers: {
+            email: email,
+          },
+          withCredentials: true,
+        }
+      )
+      .then((res) => {
+        console.log("Order placed:", res.data);
+      })
+      .catch((err) => {
+        console.error("Error placing order:", err);
+      });
 
     closeBuyWindow();
   };

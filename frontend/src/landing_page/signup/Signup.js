@@ -40,7 +40,7 @@ function Signup() {
           setAlertMessage("");
           navigate("/");
           window.location.reload();
-        }, 500);
+        }, 1000);
       } else {
         setAlertMessage("Signup Failed! User already exists");
         setTimeout(() => {

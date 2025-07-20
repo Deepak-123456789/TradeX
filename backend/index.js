@@ -1,5 +1,4 @@
 require("dotenv").config();
-
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
@@ -11,13 +10,13 @@ const jwt = require("jsonwebtoken");
 const { PositionsModel } = require("./model/PositionsModel");
 const { OrdersModel } = require("./model/OrdersModel");
 const { authenticate } = require("./util/authenticate");
+const UserModel = require("./model/userModel");
 
 const PORT = process.env.PORT || 3002;
 const uri = process.env.MONGO_URL;
 
 const app = express();
 
-// const allowedOrigins = ["http://localhost:3000", "http://localhost:3001"];
 const allowedOrigins = [process.env.SERVER1, process.env.SERVER2];
 
 app.use(bodyParser.json());
@@ -46,7 +45,7 @@ app.get("/allPositions", authenticate, async (req, res) => {
   res.json(allPositions);
 });
 
-app.post("/newOrder", async (req, res) => {
+app.post("/newOrder", authenticate, async (req, res) => {
   let newOrder = new OrdersModel({
     name: req.body.name,
     qty: req.body.qty,
@@ -54,11 +53,21 @@ app.post("/newOrder", async (req, res) => {
     mode: req.body.mode,
   });
 
-  await newOrder.save();
+  let savedOrder = await newOrder.save();
+  const email = req.headers["email"];
 
+  await UserModel.updateOne(
+    { email: email },
+    { $push: { orders: savedOrder._id } }
+  );
   res.send("Order saved!");
 });
+app.get("/allorders", authenticate, async (req, res) => {
+  const email = req.headers["email"];
 
+  let user = await UserModel.findOne({ email: email }).populate("orders");
+  res.json(user.orders);
+});
 app.post("/signup", Signup);
 app.post("/login", Login);
 app.post("/logout", Logout);
