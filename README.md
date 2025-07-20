@@ -19,7 +19,7 @@
 
 ### Frontend:
 - React.js  
-- Tailwind CSS / Material UI (based on your preference)  
+- Vanilla Css  
 
 ### Backend:
 - Node.js  
